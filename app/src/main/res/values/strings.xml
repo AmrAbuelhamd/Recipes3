@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Recipes3</string>
+
+    <!--   region General Error Text-->
+    <string name="general_error_text_unknown">Unknown Error</string>
+    <string name="general_error_text_no_internet">You have no internet</string>
+    <!--   endregion-->
+
+    <!--   region Authorization Phone Number-->
+    <string name="authorization_headline">Create Account</string>
+    <string name="authorization_instruction">Enter your phone number.</string>
+    <string name="authorization_hint_phone_number">Phone number</string>
+    <string name="authorization_incorrect_number">Wrong phone number format</string>
+    <string name="authorization_policy">I agree with the company\'s rules and policies</string>
+    <string name="authorization_link_policy">Rules</string>
+    <string name="authorization_company_rules">Company policy</string>
+    <string name="authorization_logout">Log out</string>
+    <string name="authorization_login">Log in</string>
+    <!--   endregion-->
+</resources>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">@color/primary_wave_100</color>
+    <color name="colorOnPrimary">@color/white_100</color>
+    <color name="background">@color/white_100</color>
+    <color name="colorOnBackground">@color/black_solid_100</color>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="transparent">#00FFFFFF</color>
+
+    <!--    Secondary Lime-->
+    <color name="secondary_lime_100">#29C7B5</color>
+    <color name="secondary_lime_90">#4EEDDA</color>
+    <color name="secondary_lime_75">#89F3E6</color>
+    <color name="secondary_lime_50">#E1FCF8</color>
+
+    <!--    Primary Wave-->
+    <color name="primary_wave_100">#0996E5</color>
+    <color name="primary_wave_90">#1F9FE7</color>
+    <color name="primary_wave_75">#4CB2EC</color>
+    <color name="primary_wave_50">#78C5F0</color>
+    <color name="primary_wave_25">#BBE2F7</color>
+    <color name="primary_wave_5">#E8F5FC</color>
+
+    <!--    Black Solid-->
+    <color name="black_solid_100">#040415</color>
+    <color name="black_solid_90">#44464C</color>
+    <color name="black_solid_75">#686B73</color>
+    <color name="black_solid_50">#9B9DA1</color>
+    <color name="black_solid_25">#CDCDD0</color>
+    <color name="black_solid_5">#E6E7E8</color>
+
+    <!--    Black Transparent-->
+    <color name="black_transparent_75">#BF040415</color>
+    <color name="black_transparent_50">#80040415</color>
+    <color name="black_transparent_35">#59040415</color>
+    <color name="black_transparent_25">#40040415</color>
+    <color name="black_transparent_10">#26040415</color>
+
+    <!--    White-->
+    <color name="white_100">#FFFFFF</color>
+    <color name="white_90">#CCFFFFFF</color>
+    <color name="white_75">#99FFFFFF</color>
+    <color name="white_50">#66FFFFFF</color>
+    <color name="white_25">#33FFFFFF</color>
+    <color name="white_5">#1AFFFFFF</color>
+
+    <!--    Error-->
+    <color name="error_100">#FE483C</color>
+    <color name="error_90">#CCFE483C</color>
+    <color name="error_75">#99FE483C</color>
+    <color name="error_50">#66FE483C</color>
+    <color name="error_25">#33FE483C</color>
+    <color name="error_5">#1AFE483C</color>
+
+    <!--    Success-->
+    <color name="success_100">#33C96F</color>
+    <color name="success_90">#CC33C96F</color>
+    <color name="success_75">#9933C96F</color>
+    <color name="success_50">#6633C96F</color>
+    <color name="success_25">#3333C96F</color>
+    <color name="success_5">#1A33C96F</color>
+</resources>

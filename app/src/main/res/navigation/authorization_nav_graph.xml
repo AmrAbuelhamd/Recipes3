@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/authorization_nav_graph"
+    app:startDestination="@id/authorizationFragment">
+
+    <fragment
+        android:id="@+id/authorizationFragment"
+        android:name="com.blogspot.soyamr.recipes3.presentation.authorization.AuthorizationFragment"
+        android:label="fragment_authorization"
+        tools:layout="@layout/fragment_authorization">
+        <action
+            android:id="@+id/action_authorizationPhoneNumberFragment_to_policyFragment"
+            app:destination="@id/policyFragment" />
+        <action
+            android:id="@+id/action_authorizationPhoneNumberFragment_to_smsCodeFragment"
+            app:destination="@id/smsCodeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/policyFragment"
+        android:name="com.blogspot.soyamr.recipes3.presentation.authorization.companyPolicy.PolicyFragment"
+        android:label="fragment_policy"
+        tools:layout="@layout/fragment_policy">
+        <argument
+            android:name="contentId"
+            app:argType="string"
+            app:nullable="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/smsCodeFragment"
+        android:name="com.blogspot.soyamr.recipes3.presentation.authorization.smsCode.SmsCodeFragment"
+        android:label="fragment_sms_code"
+        tools:layout="@layout/fragment_sms_code">
+        <argument
+            android:name="userPhoneNumber"
+            app:argType="string"
+            app:nullable="false" />
+    </fragment>
+</navigation>

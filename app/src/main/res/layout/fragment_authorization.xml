@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginHorizontal="20dp"
+    tools:context=".presentation.authorization.AuthorizationFragment">
+
+    <ImageView
+        android:id="@+id/btn_navigate_back"
+        style="@style/BackNavigateImage"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/tv_headline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/tv_headline"
+        style="@style/Text.Headline1.Bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/authorization_headline"
+        app:layout_constraintBottom_toTopOf="@id/tv_instruction"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_navigate_back" />
+
+    <TextView
+        android:id="@+id/tv_instruction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:paddingEnd="55dp"
+        android:text="@string/authorization_instruction"
+        android:textAppearance="@style/Text.Paragraph2"
+        app:layout_constraintBottom_toTopOf="@id/il_phone_number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_headline" />
+
+    <Space
+        android:id="@+id/spacer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_min="8dp"
+        app:layout_constraintHeight_percent=".08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_instruction" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/il_phone_number"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/authorization_hint_phone_number"
+        android:textColorHint="@color/black_solid_50"
+        app:boxStrokeColor="@color/primary_wave_100"
+        app:boxStrokeErrorColor="@color/error_100"
+        app:errorTextColor="@color/error_100"
+        app:helperTextTextColor="@color/error_100"
+        app:hintTextAppearance="@style/Text.System.Placeholder"
+        app:hintTextColor="@color/black_solid_50"
+        app:layout_constraintBottom_toTopOf="@id/tv_policy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spacer"
+        app:prefixText="+7"
+        app:prefixTextAppearance="@style/Text.System.Placeholder"
+        app:prefixTextColor="@color/black_solid_100"
+        app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Medium">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_phone_number"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:digits="0123456789+-() "
+            android:imeOptions="actionDone"
+            android:inputType="phone"
+            android:maxLength="16"
+            android:textAppearance="@style/Text.System.Placeholder"
+            android:textColor="@color/black_solid_100" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <CheckBox
+        android:id="@+id/chk_policy"
+        style="@style/CheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_policy"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_policy" />
+
+    <TextView
+        android:id="@+id/tv_policy"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:autoLink="none"
+        android:text="@string/authorization_policy"
+        android:textAppearance="@style/Text.Paragraph3.Regular"
+        android:textColor="@color/black_solid_100"
+        app:layout_constraintBottom_toTopOf="@id/space"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/chk_policy"
+        app:layout_constraintTop_toBottomOf="@id/il_phone_number" />
+
+    <Space
+        android:id="@+id/space"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/btn_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_min="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_policy" />
+
+    <Button
+        android:id="@+id/btn_login"
+        style="@style/Button.Big.Field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:enabled="false"
+        android:text="@string/authorization_login"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/space" />
+
+    <androidx.core.widget.ContentLoadingProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
