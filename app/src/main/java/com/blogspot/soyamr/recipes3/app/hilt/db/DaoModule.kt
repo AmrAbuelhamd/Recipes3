@@ -1,7 +1,7 @@
 package com.blogspot.soyamr.recipes3.app.hilt.db
 
-import com.blogspot.soyamr.data.db.auth.SessionDao
 import com.blogspot.soyamr.data.db.common.AppDatabase
+import com.blogspot.soyamr.data.db.recipe.RecipeDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -13,5 +13,5 @@ import javax.inject.Singleton
 object DaoModule {
     @Provides
     @Singleton
-    fun bindSessionDao(db: AppDatabase): SessionDao = db.sessionDao()
+    fun bindRecipeDao(db: AppDatabase): RecipeDao = db.recipeDao()
 }

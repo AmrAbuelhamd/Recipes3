@@ -12,10 +12,6 @@ annotation class HeadersInterceptor
 
 @Retention(AnnotationRetention.RUNTIME)
 @Qualifier
-annotation class TokenAuthenticator
-
-@Retention(AnnotationRetention.RUNTIME)
-@Qualifier
 annotation class StatusCodeInterceptor
 
 @Retention(AnnotationRetention.RUNTIME)

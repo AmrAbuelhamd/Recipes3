@@ -50,6 +50,10 @@ better-link-movement-method = "2.2.0"
 phone-number = "8.13.7"
 # mvi-core-diff
 mvi-core-diff = "1.4.0"
+# swipe to refresh
+swipe-to-refresh = "1.1.0"
+# coil
+coil = "2.3.0"
 
 [plugins]
 # android
@@ -103,3 +107,7 @@ better-link-movement-method = { group = "me.saket", name = "better-link-movement
 phone-number = { group = "io.michaelrocks", name = "libphonenumber-android", version.ref = "phone-number" }
 # mvi-core-diff
 mvi-core-diff = { group = "com.github.badoo.mvicore", name = "mvicore-diff", version.ref = "mvi-core-diff" }
+# swipe to refresh
+swipe-to-refresh = { group = "androidx.swiperefreshlayout", name = "swiperefreshlayout", version.ref = "swipe-to-refresh" }
+# coil
+coil = { group = "io.coil-kt", name = "coil", version.ref = "coil" }

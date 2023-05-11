@@ -7,6 +7,6 @@ public object Database {
     public fun build(context: Context): AppDatabase = Room.databaseBuilder(
         context,
         AppDatabase::class.java,
-        "app_database"
+        "recipe3_database"
     ).build()
 }

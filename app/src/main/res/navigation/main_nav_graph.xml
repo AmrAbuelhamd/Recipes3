@@ -3,16 +3,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav_graph"
-    app:startDestination="@id/profileFragment">
+    app:startDestination="@id/recipeListFragment">
 
     <fragment
-        android:id="@+id/profileFragment"
-        android:name="com.blogspot.soyamr.recipes3.presentation.profile.ProfileFragment"
-        android:label="fragment_main_rent"
-        tools:layout="@layout/fragment_profile">
+        android:id="@+id/recipeListFragment"
+        android:name="com.blogspot.soyamr.recipes3.presentation.recipeList.RecipeListFragment"
+        android:label="RecipeListFragment"
+        tools:layout="@layout/fragment_recipe_list">
         <action
-            android:id="@+id/action_profileFragment_to_authorization_nav_graph"
-            app:destination="@id/authorization_nav_graph" />
+            android:id="@+id/action_recipeList_to_recipeDetails"
+            app:destination="@id/recipeDetailsFragment" />
     </fragment>
-    <include app:graph="@navigation/authorization_nav_graph" />
+
+    <fragment
+        android:id="@+id/recipeDetailsFragment"
+        android:name="com.blogspot.soyamr.recipes3.presentation.recipeDetails.RecipeDetailsFragment"
+        android:label="RecipeDetailsFragment"
+        tools:layout="@layout/fragment_recipe_details">
+        <action
+            android:id="@+id/action_recipeDetails_to_self"
+            app:destination="@id/recipeDetailsFragment" />
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
 </navigation>

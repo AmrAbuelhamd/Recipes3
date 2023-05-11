@@ -2,7 +2,6 @@ package com.blogspot.soyamr.domain
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.*
-import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
 
 @Suppress("InjectDispatcher")
@@ -37,12 +36,4 @@ interface SuspendedUseCase<in Input, Output> {
         withContext(Dispatchers.IO) { execute(param) }
 
     suspend fun execute(param: Input): Output
-}
-
-@Suppress("InjectDispatcher")
-interface BlockingUseCase<in Input, Output> {
-    operator fun invoke(param: Input): Output =
-        runBlocking { execute(param).flowOn(Dispatchers.IO).first() }
-
-    suspend fun execute(param: Input): Flow<Output>
 }

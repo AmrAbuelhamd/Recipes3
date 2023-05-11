@@ -61,7 +61,7 @@ abstract class BaseFragment<VB : ViewBinding, S : UiState, E : UiEvent> : Fragme
         val message = when (this) {
             is AppEvent.ErrorMessage -> this.message
             is AppEvent.Unknown -> getString(R.string.general_error_text_unknown)
-            is AppEvent.NoInternet -> getString(R.string.general_error_text_no_internet)
+            is AppEvent.NoInternet -> getString(R.string.general_error_text_no_internet) // TODO: show full screen dialog if there is no internet.
         }
         showSnackBar(message = message)
     }

@@ -2,9 +2,8 @@ package com.blogspot.soyamr.recipes3.app.hilt.dataSourcesUsecasesModules;
 
 import android.content.Context
 import com.blogspot.soyamr.data.local.datastore.DataStoreSourceImpl
-import com.blogspot.soyamr.domain.auth.*
 import com.blogspot.soyamr.domain.dataStore.*
-import dagger.Binds
+import com.blogspot.soyamr.domain.recipe.*
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -24,13 +23,5 @@ interface DataStoreModule {
     // endregion
 
     // region use cases
-    @Binds
-    fun bindBlockingGetBaseUrlUseCase(impl: BlockingGetBaseUrlUseCaseImpl): BlockingGetBaseUrlUseCase
-
-    @Binds
-    fun bindObserveAppEnvironmentUseCase(impl: ObserveAppEnvironmentUseCaseImpl): ObserveAppEnvironmentUseCase
-
-    @Binds
-    fun bindUpdateAppEnvironmentUseCase(impl: UpdateAppEnvironmentUseCaseImpl): UpdateAppEnvironmentUseCase
     // endregion
 }

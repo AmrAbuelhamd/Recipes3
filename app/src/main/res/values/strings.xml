@@ -17,4 +17,29 @@
     <string name="authorization_logout">Log out</string>
     <string name="authorization_login">Log in</string>
     <!--   endregion-->
+
+    <string name="recipe_photo">recipe photo</string>
+    <string name="type_to_search_the_list">type to search the list</string>
+    <string name="difficulty">Difficulty:\u0020</string>
+    <string name="search">Search</string>
+    <string name="search_hint">Search Recipes</string>
+    <string name="sort_by_name">Sort By Name</string>
+    <string name="sort_by_date">Sort By Date</string>
+    <string name="more">More</string>
+    <string name="share">share</string>
+    <string name="like">like</string>
+    <string name="instruction">Instruction:</string>
+    <string name="recommended">Recommended:</string>
+    <string name="no_internet">No internet</string>
+    <string name="something_went_wrong">Something went wrong</string>
+    <string name="no_internet_text">Try refreshing the screen when communication is restored.</string>
+    <string name="something_went_wrong_text">The problem is on our side, we are already looking into it. Please try refreshing the screen later.</string>
+    <string name="refresh">refresh</string>
+    <string name="download">Download</string>
+    <string name="permission_required">Permission required</string>
+    <string name="permission_required_message">Permission required to save photos from the Web.</string>
+    <string name="accept">Accept</string>
+    <string name="deny">Deny</string>
+    <string name="thanks">Thanks for adding me to favorites</string>
+    <string name="letsCookThis">let\'s cook \"%1$s\" TONIGHT</string>
 </resources>

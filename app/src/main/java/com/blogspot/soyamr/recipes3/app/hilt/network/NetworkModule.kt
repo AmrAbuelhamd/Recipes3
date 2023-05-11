@@ -1,19 +1,12 @@
 package com.blogspot.soyamr.recipes3.app.hilt.network
 
 import com.blogspot.soyamr.data.net.common.Network
-import com.blogspot.soyamr.domain.auth.ClearSessionUseCase
-import com.blogspot.soyamr.domain.auth.GetCurrentSessionUseCase
-import com.blogspot.soyamr.domain.auth.LogoutUseCase
-import com.blogspot.soyamr.domain.auth.UpdateTokensUseCase
-import com.blogspot.soyamr.domain.dataStore.BlockingGetBaseUrlUseCase
 import com.blogspot.soyamr.recipes3.BuildConfig
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.serialization.json.Json
-import okhttp3.Authenticator
 import okhttp3.Cache
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -36,7 +29,7 @@ object NetworkModule {
     @Singleton
     @Provides
     @BaseUrl
-    fun provideBaseUrl(blockingGetBaseUrlUseCase: BlockingGetBaseUrlUseCase) = blockingGetBaseUrlUseCase(Unit)
+    fun provideBaseUrl() = BuildConfig.BASE_URL
 
     @Provides
     @Singleton
@@ -55,45 +48,15 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    @TokenAuthenticator
-    fun provideAuthenticator(
-        appScope: CoroutineScope,
-        getCurrentSessionUseCase: GetCurrentSessionUseCase,
-        updateTokensUseCase: UpdateTokensUseCase,
-        clearUserDataUseCase: ClearSessionUseCase,
-        @BaseUrl
-        baseUrl: String,
-        serializer: Json,
-        isDebugEnvironment: Boolean
-    ): Authenticator = Network.getTokenAuthenticator(
-        appScope = appScope,
-        getCurrentSessionUseCase = getCurrentSessionUseCase,
-        updateTokensUseCase = updateTokensUseCase,
-        clearUserDataUseCase = clearUserDataUseCase,
-        baseUrl = baseUrl,
-        serializer = serializer,
-        isDebugEnvironment = isDebugEnvironment
-    )
-
-    @Provides
-    @Singleton
     @HeadersInterceptor
-    fun provideHeadersInterceptor(
-        getCurrentSessionUseCase: GetCurrentSessionUseCase,
-    ): Interceptor = Network.getHeadersInterceptor(
-        getCurrentSessionUseCase = getCurrentSessionUseCase,
-    )
+    fun provideHeadersInterceptor(): Interceptor = Network.getHeadersInterceptor()
 
     @Provides
     @Singleton
     @StatusCodeInterceptor
     fun provideStatusCodeInterceptor(
-        appScope: CoroutineScope,
-        logoutUseCase: LogoutUseCase,
         deserializer: Json,
     ): Interceptor = Network.getStatusCodeInterceptor(
-        appScope = appScope,
-        logoutUseCase = logoutUseCase,
         deserializer = deserializer,
     )
 
@@ -104,10 +67,8 @@ object NetworkModule {
         @LoggingInterceptor loggingInterceptor: Interceptor?,
         @HeadersInterceptor headersInterceptor: Interceptor,
         @StatusCodeInterceptor statusCodeInterceptor: Interceptor,
-        @TokenAuthenticator tokenAuthenticator: Authenticator,
     ): OkHttpClient = Network.getHttpClient(
         interceptors = listOfNotNull(loggingInterceptor, headersInterceptor, statusCodeInterceptor),
-        authenticator = tokenAuthenticator,
         cache = cache,
     )
 
@@ -116,10 +77,10 @@ object NetworkModule {
     fun provideRetrofit(
         client: OkHttpClient,
         converter: Converter.Factory,
-        blockingGetBaseUrlUseCase: BlockingGetBaseUrlUseCase,
+        @BaseUrl baseUrl: String,
     ): Retrofit = Network.getRetrofit(
         client = client,
-        blockingGetBaseUrlUseCase = blockingGetBaseUrlUseCase,
+        baseUrl = baseUrl,
         converterFactory = converter,
     )
 }

@@ -25,6 +25,8 @@ android {
         versionName = "$major.$minor($buildNumber)"
 
         testInstrumentationRunner = libs.versions.testRunner.get()
+
+        buildConfigField("String", "BASE_URL", "\"https://test.kode-t.ru/\"")
     }
 
     buildFeatures {
@@ -87,4 +89,10 @@ dependencies {
 
     // model watcher
     implementation(libs.mvi.core.diff)
+
+    // swipe to refresh
+    implementation(libs.swipe.to.refresh)
+
+    // coil
+    implementation(libs.coil)
 }
