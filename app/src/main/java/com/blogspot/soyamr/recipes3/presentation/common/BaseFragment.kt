@@ -10,6 +10,9 @@ import com.badoo.mvicore.ModelWatcher
 import com.blogspot.soyamr.recipes3.R
 import com.blogspot.soyamr.recipes3.presentation.common.extentions.observeFlow
 import com.blogspot.soyamr.recipes3.presentation.common.extentions.showSnackBar
+import com.blogspot.soyamr.recipes3.presentation.common.models.AppEvent
+import com.blogspot.soyamr.recipes3.presentation.common.models.UiEvent
+import com.blogspot.soyamr.recipes3.presentation.common.models.UiState
 import kotlinx.coroutines.flow.mapNotNull
 
 abstract class BaseFragment<VB : ViewBinding, S : UiState, E : UiEvent> : Fragment() {
@@ -53,7 +56,7 @@ abstract class BaseFragment<VB : ViewBinding, S : UiState, E : UiEvent> : Fragme
     private fun observeAppEvents() {
         observeFlow(viewModel.appWideEvents.mapNotNull { it.firstOrNull() }) { event ->
             event.handleAppWideEvent()
-            viewModel.removeEvent(event.id)
+            viewModel.removeAppWideEvent(event.id)
         }
     }
 

@@ -4,6 +4,9 @@ import androidx.lifecycle.ViewModel
 import com.blogspot.soyamr.domain.common.model.CommonBackendFailure
 import com.blogspot.soyamr.domain.common.model.NoInternetFailure
 import com.blogspot.soyamr.domain.common.model.UnknownFailure
+import com.blogspot.soyamr.recipes3.presentation.common.models.AppEvent
+import com.blogspot.soyamr.recipes3.presentation.common.models.UiEvent
+import com.blogspot.soyamr.recipes3.presentation.common.models.UiState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
@@ -27,11 +30,15 @@ abstract class BaseViewModel<S : UiState, E : UiEvent>(initialState: S) : ViewMo
     }
 
     fun removeEvent(eventId: String) {
-        _uiEvents.update { it.filterNot { it.id == eventId } }
+        _uiEvents.update { uiEvents -> uiEvents.filterNot { it.id == eventId } }
     }
 
     fun sendUiEvent(event: E) {
         _uiEvents.update { it + event }
+    }
+
+    fun removeAppWideEvent(eventId: String) {
+        _appWideEvents.update { uiEvents -> uiEvents.filterNot { it.id == eventId } }
     }
 
     fun handleError(throwable: Throwable) {

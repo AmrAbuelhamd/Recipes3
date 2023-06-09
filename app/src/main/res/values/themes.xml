@@ -59,4 +59,8 @@
         <item name="cornerSizeBottomLeft">5dp</item>
         <item name="contentPadding">0dp</item>
     </style>
+
+    <style name="ThemeOverlay.App.MaterialAlertDialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="android:windowBackground">@drawable/background_alert_dialog</item>
+    </style>
 </resources>

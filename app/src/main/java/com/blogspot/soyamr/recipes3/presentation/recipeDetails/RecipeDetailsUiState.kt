@@ -1,7 +1,7 @@
 package com.blogspot.soyamr.recipes3.presentation.recipeDetails
 
-import com.blogspot.soyamr.recipes3.presentation.common.UiEvent
-import com.blogspot.soyamr.recipes3.presentation.common.UiState
+import com.blogspot.soyamr.recipes3.presentation.common.models.UiEvent
+import com.blogspot.soyamr.recipes3.presentation.common.models.UiState
 import com.blogspot.soyamr.recipes3.presentation.recipeDetails.models.RecipeDetailsUi
 import com.blogspot.soyamr.recipes3.presentation.recipeDetails.models.ShortRecipeUi
 

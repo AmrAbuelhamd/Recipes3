@@ -1,6 +1,6 @@
-package com.blogspot.soyamr.recipes3.presentation.common
+package com.blogspot.soyamr.recipes3.presentation.common.models
 
-import java.util.*
+import java.util.UUID
 
 interface UiState
 

@@ -1,7 +1,7 @@
 package com.blogspot.soyamr.recipes3.presentation.recipeList
 
-import com.blogspot.soyamr.recipes3.presentation.common.UiEvent
-import com.blogspot.soyamr.recipes3.presentation.common.UiState
+import com.blogspot.soyamr.recipes3.presentation.common.models.UiEvent
+import com.blogspot.soyamr.recipes3.presentation.common.models.UiState
 import com.blogspot.soyamr.recipes3.presentation.recipeList.models.RecipeUi
 
 data class RecipeListState(
